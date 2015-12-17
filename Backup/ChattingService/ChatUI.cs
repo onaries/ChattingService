@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Net;
 using System.Threading;
+using System.Net.Sockets;
 
 namespace ChattingService
 {
@@ -77,6 +78,7 @@ namespace ChattingService
 			{
 				openPort.ReadOnly = true;
 				openPort.BackColor = Color.Khaki;
+                clientList.Items.Add("방장");
 				whisperList.SelectedIndex = 0;
 			}
 			else
@@ -148,16 +150,117 @@ namespace ChattingService
 
 		public void WriteSystemMsg(QueueData d)
 		{
-			chatBox.AppendText("- " + d.msg + "\r\n");
+			chatBox.AppendText("방장 - " + d.msg + "\r\n");
 		}
 
 		public void WriteStartInfo(QueueData d)
 		{
-			myInfoLabel.Text = d.msgFrom;
-			nick.Text = d.msgFrom;
-		}
+            IPAddress myip = GetExternalIPAddress();
+            string localip = Client_IP;
+            try
+            {
+                myInfoLabel.Text = "서버 주소 : " + myip.ToString();
+            }
+            catch (NullReferenceException e)
+            {
+                myInfoLabel.Text = "서버 주소 : " + localip;
+            }
+            Random r = new Random();
+            //nick.Text = "손님" + r.Next(1, 100);
+        }
 
-		public void WriteUserList(QueueData d)
+        public static string Client_IP
+        {
+            get
+            {
+                IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+                string ClientIP = string.Empty;
+                for (int i = 0; i < host.AddressList.Length; i++)
+                {
+                    if (host.AddressList[i].AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        ClientIP = host.AddressList[i].ToString();
+                    }
+                }
+                return ClientIP;
+            }
+        }
+
+        private IPAddress GetExternalIPAddress()
+        {
+            IPHostEntry myIPHostEntry = Dns.GetHostEntry(Dns.GetHostName());
+
+            foreach (IPAddress myIPAddress in myIPHostEntry.AddressList)
+            {
+                byte[] ipBytes = myIPAddress.GetAddressBytes();
+
+                if (myIPAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                    if (!IsPrivateIP(myIPAddress))
+                    {
+                        return myIPAddress;
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        private bool IsPrivateIP(IPAddress myIPAddress)
+        {
+            if (myIPAddress.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+            {
+                byte[] ipBytes = myIPAddress.GetAddressBytes();
+
+                // 10.0.0.0/24 
+                if (ipBytes[0] == 10)
+                {
+                    return true;
+                }
+                // 172.16.0.0/16
+                else if (ipBytes[0] == 172 && ipBytes[1] == 16)
+                {
+                    return true;
+                }
+                // 192.168.0.0/16
+                else if (ipBytes[0] == 192 && ipBytes[1] == 168)
+                {
+                    return true;
+                }
+                // 169.254.0.0/16
+                else if (ipBytes[0] == 169 && ipBytes[1] == 254)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool CompareIpAddress(IPAddress IPAddress1, IPAddress IPAddress2)
+        {
+            byte[] b1 = IPAddress1.GetAddressBytes();
+            byte[] b2 = IPAddress2.GetAddressBytes();
+
+            if (b1.Length == b2.Length)
+            {
+                for (int i = 0; i < b1.Length; ++i)
+                {
+                    if (b1[i] != b2[i])
+                    {
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        public void WriteUserList(QueueData d)
 		{
 			foreach( string who in ((Dictionary<string, string>)d.msg).Keys )
 			{

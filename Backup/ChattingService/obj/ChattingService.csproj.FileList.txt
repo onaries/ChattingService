@@ -1,0 +1,8 @@
+bin\Debug\ChattingService.exe
+bin\Debug\ChattingService.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ChattingService.Properties.Resources.resources
+obj\Debug\ChattingService.csproj.GenerateResource.Cache
+obj\Debug\ChattingService.exe
+obj\Debug\ChattingService.pdb
+obj\Debug\ChattingService.MainForm.resources

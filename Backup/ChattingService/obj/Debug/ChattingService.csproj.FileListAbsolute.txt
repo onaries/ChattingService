@@ -1,0 +1,16 @@
+C:\ChattingService\ChattingService\obj\Debug\ChattingService.exe
+C:\ChattingService\ChattingService\obj\Debug\ChattingService.pdb
+C:\ChattingService\ChattingService\bin\Debug\ChattingService.exe
+C:\ChattingService\ChattingService\obj\Debug\ChattingService.csprojResolveAssemblyReference.cache
+C:\ChattingService\ChattingService\obj\Debug\ChattingService.MainForm.resources
+C:\ChattingService\ChattingService\obj\Debug\ChattingService.Properties.Resources.resources
+C:\ChattingService\ChattingService\obj\Debug\ChattingService.csproj.GenerateResource.Cache
+C:\ChattingService\ChattingService\bin\Debug\ChattingService.pdb
+E:\ChattingService\ChattingService\bin\Debug\ChattingService.exe
+E:\ChattingService\ChattingService\bin\Debug\ChattingService.pdb
+E:\ChattingService\ChattingService\obj\Debug\ChattingService.MainForm.resources
+E:\ChattingService\ChattingService\obj\Debug\ChattingService.Properties.Resources.resources
+E:\ChattingService\ChattingService\obj\Debug\ChattingService.csproj.GenerateResource.Cache
+E:\ChattingService\ChattingService\obj\Debug\ChattingService.exe
+E:\ChattingService\ChattingService\obj\Debug\ChattingService.pdb
+E:\ChattingService\ChattingService\obj\Debug\ChattingService.csprojResolveAssemblyReference.cache

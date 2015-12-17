@@ -1,0 +1,8 @@
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\obj\Debug\ChattingService.exe
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\obj\Debug\ChattingService.pdb
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\bin\Debug\ChattingService.exe
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\bin\Debug\ChattingService.pdb
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\obj\Debug\ResolveAssemblyReference.cache
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\obj\Debug\ChattingService.MainForm.resources
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\obj\Debug\ChattingService.Properties.Resources.resources
+E:\Mountain Ghost\Works\공부\C#\멀티채팅프로그램\멀티채팅프로그램\ChattingService\ChattingService\ChattingService\obj\Debug\ChattingService.csproj.GenerateResource.Cache
